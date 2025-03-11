@@ -1,0 +1,44 @@
+class ISE_Exam{
+
+	public static void main(String args[])
+	{
+		ISE_Exam  ise=new ISE_Exam();
+		ise.displaypattern(6);
+		System.out.println();
+		System.out.println();
+		ise.displaypattern(7);
+	}
+	
+	void displaypattern(int size)
+	{
+		for(int line=0; line<=size-4 ; line++)
+		{
+			System.out.print("|");
+			for(int space=0; space<line; space++)
+			{
+				System.out.print(" ");
+			}
+			for(int symbol=1; symbol<=size-(2*line); symbol++)
+			{
+				System.out.print("o");
+			}
+			for(int space=0; space<line; space++)
+			{
+				System.out.print(" ");
+			}
+			System.out.print("|");
+			System.out.print("\n");
+		}
+		for(int sym=1; sym<=size+2; sym++)
+		{
+		  if(sym==1||sym==size+2)
+		  {
+		    System.out.print(" ");
+		  }
+		  else
+		  {
+		    System.out.print("~");
+		  }
+		}
+	}
+}
