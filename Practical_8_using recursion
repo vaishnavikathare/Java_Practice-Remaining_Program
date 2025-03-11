@@ -1,0 +1,209 @@
+class Practical8{
+	
+	public static void main(String args[])
+	{
+		Practical8 a=new Practical8();
+		a.displaypattern_1(1,3);
+		a.displaypattern_2(1,3);
+		a.displaypattern_4_1(1,3);
+		a.displaypattern_4_2(0,3);
+	}
+	
+	
+	void displaypattern_1(int line,int size)
+	{
+		Lines1(line,size); // for 1st loop
+		Lines2(line,size); //for 2nd loop
+	}
+	      // Line loop 1
+		void Lines1(int ln,int size)
+		{
+		    if(ln<=size+1)
+		    {
+		    
+		        Stars(ln, 1); // line=1 , star =1              
+		        System.out.print("\n");
+		        Lines1(ln+1, size);
+		    }
+		}
+		// Star loop 1
+		void Stars(int ln,int star)  //the parameter has pass from Line1 ( line=1, star=1 )
+		{
+		    if(star<=2*ln-ln)
+		    {
+		        System.out.print("*");
+		        Stars(ln, star+1); 
+		    } 
+		}
+        
+        	// Line loop 2
+		void Lines2(int ln,int size)
+		{
+			if(ln<=size)
+			{
+				Stars(ln, size,1); // line=1, size=3, star =1
+				System.out.print("\n");
+				Lines2(ln+1, size);
+			}    
+		}
+		// Star loop 2
+		void Stars(int ln,int size,int star)  // the parameter has pass from Line2 ( line=1, size=3, star=1)
+		{
+			if(star<=size+1-ln)
+			{
+				System.out.print("*");
+				Stars(ln,size,star+1);
+			}
+		}
+	
+//__________________________________________________________________________________________________________________________________//
+
+	void displaypattern_2(int line,int size)
+	{
+		Line1(line,size);
+		Line2(line,size);
+	}
+	
+	void Line1(int line, int size)
+	{
+		if(line<=size+1)
+		{
+			Space(line, size, 1);
+			Symbol1(line, size, 1);
+			System.out.print("\n");
+			Line1(line+1,size);
+		}
+	}
+	void Space(int line,int size,int space)
+	{
+		if(space<=size+1-line)
+		{
+			System.out.print(" ");
+			Space(line,size,space+1);
+		}
+	}
+	void Symbol1(int line,int size,int symbol)
+	{
+		if(symbol<=line)
+		{
+			if(line==size+1)
+			{
+				System.out.print("+");
+			}
+			else
+			{
+				System.out.print("*");
+			}
+			Symbol1(line,size,symbol+1);
+		}
+	}
+	
+	
+	void Line2(int line,int size)
+	{
+		if(line<=size+1)
+		{
+			Space(line,1);
+			Symbol2(line,size,1);
+			System.out.print("\n");
+			Line2(line+1,size);
+		}
+	}
+	void Space(int line,int space)
+	{
+		if(space<=line)
+		{
+			System.out.print(" ");
+			Space(line,space+1);
+		}
+	}
+	void Symbol2(int line, int size, int symbol)
+	{
+		if(symbol<=size+1-line)
+		{
+			System.out.print("/");
+			Symbol2(line,size,symbol+1);
+		}
+	}
+	
+	
+//_____________________________________________________________________________________________________________________________________//
+
+
+	void displaypattern_4_1(int line,int size)
+	{
+		Ln1(line,size);
+	}
+	void displaypattern_4_2(int line,int size)
+	{
+		Ln2(line,size);
+	}
+	
+	void Ln1(int line,int size)
+	{
+		if(line<=size+1)
+		{
+			Spaces1(line,size, 1);
+			Symbols1(line,1);
+			System.out.print("\n");
+			Ln1(line+1, size);
+		}
+	}
+	void Spaces1(int line,int size, int spaces)
+	{
+		if(spaces<=size+1-line)
+		{
+			System.out.print(" ");
+			Spaces1(line,size, spaces+1 );
+		}
+	}
+	void Symbols1(int line,int sym)
+	{
+		if(sym<=2*line-1)
+		{
+			if(line%2==0)
+			{
+				System.out.print("/");
+			}
+			else
+			{
+				System.out.print("*");
+			}
+			Symbols1(line, sym+1);
+		}
+	}
+	
+	void Ln2(int line,int size)
+	{
+		if(line<=size+1)
+		{
+			Spaces2(line,0);
+			Symbols2(line,size,1);
+			System.out.print("\n");
+			Ln2(line+1,size);
+		}
+	}
+	void Spaces2(int line,int spaces)
+	{
+		if(spaces<line)
+		{
+			System.out.print(" ");
+			Spaces2(line,spaces+1);
+		}
+	}
+	void Symbols2(int line,int size,int sym)
+	{
+		if(sym<=2*(size-line)+1)
+		{
+			if(line%2==0)
+			{
+				System.out.print("*");
+			}
+			else
+			{
+				System.out.print("/");
+			}
+			Symbols2(line,size,sym+1);
+		}
+	}
+}
