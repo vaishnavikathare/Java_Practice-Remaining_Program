@@ -1,0 +1,156 @@
+class Pattern{
+
+        public static void main(String args[])
+        {
+        	Pattern p=new Pattern();
+        	p.displaypattern1(4);
+        	p.displaypattern2(4);
+        		p.displaypattern3(4);
+        			p.displaypattern4(4);
+        } 
+        	
+
+	void  displaypattern1(int size)
+	{
+	      for(int line=1; line<=size; line++)
+	      {
+	          for(int stars=1; stars<=line; stars++)
+	          {
+	             System.out.print("*");
+	          }
+	          System.out.print("\n");
+	       }
+	   }
+	   
+	   //___________________________________
+	   
+	   
+	  void displaypattern2(int size)
+   {
+       for(int line=1; line<=size; line++)
+       {
+            for(int space=1; space<=size-line; space++)
+            {
+                System.out.print(" ");
+           }
+            for(int stars=1; stars<=2*line-1; stars++)
+            {
+                System.out.print("*");
+            }
+            System.out.print("\n");
+        }
+    }
+ //___________________________________________________________  
+       
+        void displaypattern3(int size)
+    {
+        for(int line=1 ; line<=size; line++)
+        {
+            for(int space=1; space<=size-line; space++)
+            {
+                System.out.print(" ");
+           }
+            for(int symbols=1; symbols<=2*line-1; symbols++)
+            {
+                if(symbols % 2==1)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print("+");
+                }
+            }
+            System.out.print("\n");
+        }
+   }
+                  //   OR
+                     
+                     
+         void displaypattern4(int size)
+    {
+        for(int line=1 ; line<=size; line++)
+        {
+            for(int space=1; space<=size-line; space++)
+            {
+                System.out.print(" ");
+            }
+            for(int symbols=1; symbols<=2*line-1; symbols++)
+            {
+                if(symbols % 2!=0)
+                {
+                    System.out.print("*");
+                }
+                else
+                {
+                    System.out.print("+");
+                }
+            }
+            System.out.print("\n");
+        }
+   }
+            
+       
+       void displaypattern5(int size)
+ {
+      for(int line=1 ; line<=size; line++)
+     {
+         for(int space=1; space<=size-line; space++)
+           {                                             // reverse pattern of 3
+             System.out.print(" ");
+       }
+       for(int symbols=1; symbols<=2*line-1; symbols++)
+       {
+           if(symbols % 2!=0)
+            {
+             System.out.print("+");
+            }
+          else
+          {
+               System.out.print("*");
+             }
+      }
+         System.out.print("\n");
+   }
+ }
+
+     
+     //_______________________________________
+     
+     void displaypattern(int size)
+    {
+      for(int line=1;line<=size; line++)
+     {
+       for(int space=1;space<=size-line; space++)
+        {
+            System.out.print(" ");
+       }
+        for(int plus=1; plus<=2*line-1;plus++)
+        {
+            System.out.print("+");
+       }
+            System.out.print("\n");
+     }
+    for(int line=1; line<size; line++)
+       {
+            for(int space=1;space<=line-1; space++)
+           {
+              System.out.print(" ");
+           }
+                for(int plus=1; plus<=size; plus++)
+           {
+               if(line%2==1)
+                {
+                   System.out.print("+");
+                }
+              else
+               {
+                System.out.print("+");
+                }
+          }
+           System.out.print("\n");
+    }
+  
+}
+
+}
