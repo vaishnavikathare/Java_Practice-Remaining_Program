@@ -1,0 +1,78 @@
+class Practical9_1{
+
+	public static void main(String args[])
+	{
+		long result; 
+		int size=Integer.parseInt(args[0]);
+		long[] array= new long[size];
+		long total_time1=0;
+		long total_time2=0;
+		
+		for(int i=0; i<size; i++)
+		{
+			array[i]=System.nanoTime()%30;
+		}
+		for(int i=0; i<size; i++)
+		{
+			long starting_time1=System.nanoTime();
+			result=factorial1(array[i]);
+			long end_time1=System.nanoTime();
+			total_time1=(end_time1-starting_time1)+total_time1;
+	    }
+	       long average_time1=total_time1/size;
+		
+		for(int i=0; i<size; i++)
+		{
+			long starting_time2=System.nanoTime();
+			result=factorial2(array[i]);
+			long end_time2=System.nanoTime();
+			total_time2=(end_time2-starting_time2)+total_time2;
+	    }
+	       long average_time2=total_time2/size;
+
+		System.out.println(average_time1);
+		System.out.println(average_time2);
+	}
+
+	static long factorial1(long num) 
+	{
+        if(num>0)
+        {
+            if(num<0)
+            { 
+                 return 0;
+            }
+            else
+            {
+                long fact=2;
+                for(;num>2;)
+                {
+                    fact*=num--;
+                }
+                return fact;
+            }
+        }
+        else
+        { 
+                return -1;
+        }
+	}
+	static long factorial2(long num)
+	{
+	    if(num>0)
+	    { 
+            if(num<2)
+            { 
+                return 1;
+            }
+            else
+            {
+                return num * factorial2(num--);
+            }
+	    }
+	    else
+	    { 
+      		return -1;
+            }
+         }
+  }
